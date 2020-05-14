@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Box Loader</title>
+</head>
+<body>
+    
+    <div class="loader_overlay">
+        <div class="loader_main">
+            <div class="loader_boxdiv">
+                <div class="ld_center">
+                    <div class="ld_box"></div>
+                    <div class="ld_box"></div>
+                    <div class="ld_box"></div>
+                    <div class="ld_box"></div>
+                </div>
+            </div>
+            Loading
+        </div>
+    </div>
+    
+</body>
+
+<style>
+    body,html{
+        padding: 0;
+        margin: 0;
+    }
+    .loader_overlay{
+        width: 100%;
+        height: 100vh;
+        background: #eeffff;
+        opacity: 0.7;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .loader_main{
+        width: 70px;
+        height: 70px;
+        color: tomato;
+        line-height: 30px;
+        font-family: arial, sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .ld_center{
+        width: 50px;
+        height: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 0; 
+        margin: auto;
+        animation: loaderMain 1s infinite linear;
+    }
+    .ld_box{
+        width: 25px;
+        height: 25px;
+        background: tomato;
+    }
+    .ld_box:nth-child(1){
+        animation: effect3 1s infinite linear;
+    }
+    .ld_box:nth-child(2){
+        animation: effect4 1s infinite linear;
+    }
+    .ld_box:nth-child(3){
+        animation: effect2 1s infinite linear;
+    }
+    .ld_box:nth-child(4){
+        animation: effect1 1s infinite linear;
+    }
+    
+    @keyframes effect1{
+        0%{
+            transform: translateY(-50px);
+        }
+        25%{
+            transform: translateY(0px);
+        }
+        100%{
+            transform: translateY(0px);
+        }
+    }
+    @keyframes effect2{
+        0%{
+            transform: translateY(-50px);
+        }
+        50%{
+            transform: translateY(0px);
+        }
+        100%{
+            transform: translateY(0px);
+        }
+    }
+    @keyframes effect3{
+        0%{
+            transform: translateY(-50px);
+        }
+        75%{
+            transform: translateY(0px);
+        }
+        100%{
+            transform: translateY(0px);
+        }
+    }
+    @keyframes effect4{
+        0%{
+            transform: translateY(-50px);
+        }
+        100%{
+            transform: translateY(0px);
+        }
+    }
+    
+    @keyframes loaderMain{
+        0%{
+            transform: scale(1);
+        }
+        90%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(0.5);
+        }
+    }
+</style>
+</html>
